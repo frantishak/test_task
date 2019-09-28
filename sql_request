@@ -1,0 +1,11 @@
+# 1
+SELECT DISTINCT [NAME], [POSITION]
+FROM [EMPLOYEE]
+WHERE [DEPARTMENT_ID] = X;
+
+# 2
+SELECT * [CHIEF_ID]
+FROM [EMPLOYEE]
+WHERE [EMPLOYEE].[SALARY] >= 2 * (SELECT AVG(CAST([SALARY] as FLOAT))
+                                  FROM [EMPLOYEE]
+                                  WHERE [CHIEF_ID] = [EMPLOYEE].[ID])
